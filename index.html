@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سورة البقرة - آيات ١٥٤-١٦٣ | Surah Al-Baqarah - Verses 154-163</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            padding-top: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .audio-player-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .audio-player-section h3 {
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .audio-player-section p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .audio-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 25px;
+            outline: none;
+            height: 54px;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+        }
+
+        audio:focus {
+            outline: 2px solid #8b4513;
+            outline-offset: 2px;
+        }
+
+        .reciter-info {
+            font-family: 'Amiri', serif;
+            color: #8b4513;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .verse-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .verse-btn {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            min-width: 80px;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .verse-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .verse-btn.active {
+            background: linear-gradient(45deg, #a0522d, #8b4513);
+            box-shadow: 0 0 15px rgba(139, 69, 19, 0.5);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .arabic-title {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 10px;
+            direction: rtl;
+        }
+
+        .page-info {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .verses-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            overflow-x: hidden;
+        }
+
+        .verse {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: linear-gradient(to right, #f8f9fa, #ffffff);
+            border-left: 5px solid #8b4513;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .verse:hover {
+            transform: translateX(5px);
+        }
+
+        .verse-number {
+            display: inline-block;
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .arabic-text {
+            font-family: 'Amiri Quran', 'Amiri', serif;
+            font-size: 2rem;
+            line-height: 2.8;
+            text-align: right;
+            direction: rtl;
+            color: #1a472a;
+            margin: 20px 0;
+            padding: 25px;
+            background: #f8fdf9;
+            border-radius: 8px;
+            border: 2px solid #8b4513;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: none;
+        }
+
+        .english-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .reflection-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            overflow-x: hidden;
+        }
+
+        .reflection-section h2 {
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .reflection-point {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(to right, #fff, #f8f9fa);
+            border-left: 4px solid #a0522d;
+            border-radius: 8px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .reflection-point h3 {
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+
+        .reflection-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            line-height: 2.2;
+            text-align: right;
+            direction: rtl;
+            color: #2c3e50;
+            padding: 15px;
+            background: #f8fdf9;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: none;
+        }
+
+        .reflection-english {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            color: #666;
+            font-style: italic;
+            margin: 10px 0;
+        }
+
+        .signature {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .signature-text {
+            color: #8b4513;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+
+        .signature-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .signature-link:hover {
+            color: #764ba2;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .arabic-title {
+                font-size: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.3rem;
+            }
+
+            .page-info {
+                font-size: 0.85rem;
+            }
+
+            .audio-player-section {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .audio-player-section h3 {
+                font-size: 1.1rem;
+            }
+
+            .audio-player-section p {
+                font-size: 0.85rem;
+            }
+
+            audio {
+                max-width: 100%;
+            }
+
+            .verse-selector {
+                gap: 6px;
+            }
+
+            .verse-btn {
+                padding: 10px 14px;
+                font-size: 0.85rem;
+                flex: 0 0 calc(33.333% - 6px);
+                text-align: center;
+            }
+
+            .reciter-info {
+                font-size: 1rem;
+            }
+
+            .verses-container {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .verse {
+                padding: 15px;
+                margin-bottom: 25px;
+            }
+
+            .verse-number {
+                font-size: 0.85rem;
+                padding: 4px 12px;
+            }
+
+            .arabic-text {
+                font-size: 1.5rem;
+                line-height: 2.4;
+                padding: 15px;
+            }
+
+            .english-text {
+                font-size: 0.95rem;
+                padding: 12px;
+            }
+
+            .reflection-section {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .reflection-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .reflection-point {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .reflection-point h3 {
+                font-size: 1rem;
+            }
+
+            .reflection-arabic {
+                font-size: 1.1rem;
+                line-height: 2;
+                padding: 12px;
+            }
+
+            .reflection-english {
+                font-size: 0.95rem;
+                padding: 12px;
+            }
+
+            .footer {
+                padding: 20px 15px;
+            }
+
+            .footer-text {
+                font-size: 0.9rem;
+            }
+
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+                margin: 0 5px;
+            }
+
+            .navigation {
+                margin-bottom: 15px;
+            }
+
+            .signature {
+                padding: 15px;
+            }
+
+            .signature-text {
+                font-size: 0.85rem;
+            }
+
+            .signature-link {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .arabic-title {
+                font-size: 1.3rem;
+            }
+
+            .header h1 {
+                font-size: 1.1rem;
+            }
+
+            .verse-btn {
+                flex: 0 0 calc(50% - 6px);
+                padding: 12px 10px;
+                font-size: 0.8rem;
+            }
+
+            .arabic-text {
+                font-size: 1.3rem;
+                line-height: 2.2;
+                padding: 12px;
+            }
+
+            .english-text {
+                font-size: 0.9rem;
+            }
+
+            .reflection-arabic {
+                font-size: 1rem;
+                line-height: 1.9;
+            }
+
+            .reflection-english {
+                font-size: 0.9rem;
+            }
+
+            .nav-link {
+                display: block;
+                margin: 5px auto;
+                max-width: 200px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .navigation {
+                display: none;
+            }
+            .audio-player-section {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        let currentVerse = 154;
+        
+        function playVerse(verseNumber) {
+            currentVerse = verseNumber;
+            const audio = document.getElementById('quranAudio');
+            const source = document.getElementById('audioSource');
+            
+            // Format verse number to 3 digits
+            const formattedVerse = String(verseNumber).padStart(3, '0');
+            
+            // Update audio source
+            source.src = `https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002${formattedVerse}.mp3`;
+            
+            // Load and play
+            audio.load();
+            audio.play();
+            
+            // Update button styles
+            document.querySelectorAll('.verse-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+        
+        // Auto-play next verse when current one ends
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('quranAudio');
+            
+            audio.addEventListener('ended', function() {
+                if (currentVerse < 163) {
+                    const nextBtn = document.querySelector(`[onclick="playVerse(${currentVerse + 1})"]`);
+                    if (nextBtn) {
+                        nextBtn.click();
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="#" class="nav-link">← Previous Page</a>
+            <a href="#" class="nav-link">Next Page →</a>
+        </div>
+
+        <div class="header">
+            <div class="arabic-title">سورة البقرة</div>
+            <h1>Surah Al-Baqarah (The Cow)</h1>
+            <div class="page-info">Page 24 | Verses 154-163</div>
+        </div>
+
+        <div class="audio-player-section">
+            <h3>🎧 استماع للآيات | Listen to the Verses</h3>
+            <p>القارئ: عبد الباسط عبد الصمد | Reciter: Abdul Basit Abdus Samad</p>
+            
+            <div class="audio-controls">
+                <audio id="quranAudio" controls>
+                    <source id="audioSource" src="https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002154.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                
+                <div class="verse-selector">
+                    <button class="verse-btn active" onclick="playVerse(154)">Verse 154</button>
+                    <button class="verse-btn" onclick="playVerse(155)">Verse 155</button>
+                    <button class="verse-btn" onclick="playVerse(156)">Verse 156</button>
+                    <button class="verse-btn" onclick="playVerse(157)">Verse 157</button>
+                    <button class="verse-btn" onclick="playVerse(158)">Verse 158</button>
+                    <button class="verse-btn" onclick="playVerse(159)">Verse 159</button>
+                    <button class="verse-btn" onclick="playVerse(160)">Verse 160</button>
+                    <button class="verse-btn" onclick="playVerse(161)">Verse 161</button>
+                    <button class="verse-btn" onclick="playVerse(162)">Verse 162</button>
+                    <button class="verse-btn" onclick="playVerse(163)">Verse 163</button>
+                </div>
+                
+                <div class="reciter-info">
+                    بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                </div>
+            </div>
+        </div>
+
+        <div class="verses-container">
+            <div class="verse">
+                <span class="verse-number">Verse 154</span>
+                <div class="arabic-text">
+                    وَلَا تَقُولُوا۟ لِمَن يُقْتَلُ فِى سَبِيلِ ٱللَّهِ أَمْوَٰتٌۢ ۚ بَلْ أَحْيَآءٌۭ وَلَٰكِن لَّا تَشْعُرُونَ
+                </div>
+                <div class="english-text">
+                    And do not say about those who are killed in the way of Allah, "They are dead." Rather, they are alive, but you perceive [it] not.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 155</span>
+                <div class="arabic-text">
+                    وَلَنَبْلُوَنَّكُم بِشَىْءٍۢ مِّنَ ٱلْخَوْفِ وَٱلْجُوعِ وَنَقْصٍۢ مِّنَ ٱلْأَمْوَٰلِ وَٱلْأَنفُسِ وَٱلثَّمَرَٰتِ ۗ وَبَشِّرِ ٱلصَّٰبِرِينَ
+                </div>
+                <div class="english-text">
+                    And We will surely test you with something of fear and hunger and a loss of wealth and lives and fruits, but give good tidings to the patient.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 156</span>
+                <div class="arabic-text">
+                    ٱلَّذِينَ إِذَآ أَصَٰبَتْهُم مُّصِيبَةٌۭ قَالُوٓا۟ إِنَّا لِلَّهِ وَإِنَّآ إِلَيْهِ رَٰجِعُونَ
+                </div>
+                <div class="english-text">
+                    Who, when disaster strikes them, say, "Indeed we belong to Allah, and indeed to Him we will return."
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 157</span>
+                <div class="arabic-text">
+                    أُو۟لَٰٓئِكَ عَلَيْهِمْ صَلَوَٰتٌۭ مِّن رَّبِّهِمْ وَرَحْمَةٌۭ ۖ وَأُو۟لَٰٓئِكَ هُمُ ٱلْمُهْتَدُونَ
+                </div>
+                <div class="english-text">
+                    Those are the ones upon whom are blessings from their Lord and mercy. And it is those who are the [rightly] guided.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 158</span>
+                <div class="arabic-text">
+                    إِنَّ ٱلصَّفَا وَٱلْمَرْوَةَ مِن شَعَآئِرِ ٱللَّهِ ۖ فَمَنْ حَجَّ ٱلْبَيْتَ أَوِ ٱعْتَمَرَ فَلَا جُنَاحَ عَلَيْهِ أَن يَطَّوَّفَ بِهِمَا ۚ وَمَن تَطَوَّعَ خَيْرًۭا فَإِنَّ ٱللَّهَ شَاكِرٌ عَلِيمٌۭ
+                </div>
+                <div class="english-text">
+                    Indeed, as-Safa and al-Marwah are among the symbols of Allah. So whoever makes Hajj to the House or performs 'umrah - there is no blame upon him for walking between them. And whoever volunteers good - then indeed, Allah is appreciative and Knowing.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 159</span>
+                <div class="arabic-text">
+                    إِنَّ ٱلَّذِينَ يَكْتُمُونَ مَآ أَنزَلْنَا مِنَ ٱلْبَيِّنَٰتِ وَٱلْهُدَىٰ مِنۢ بَعْدِ مَا بَيَّنَّٰهُ لِلنَّاسِ فِى ٱلْكِتَٰبِ ۙ أُو۟لَٰٓئِكَ يَلْعَنُهُمُ ٱللَّهُ وَيَلْعَنُهُمُ ٱللَّٰعِنُونَ
+                </div>
+                <div class="english-text">
+                    Indeed, those who conceal what We sent down of clear proofs and guidance after We made it clear for the people in the Scripture - those are cursed by Allah and cursed by those who curse.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 160</span>
+                <div class="arabic-text">
+                    إِلَّا ٱلَّذِينَ تَابُوا۟ وَأَصْلَحُوا۟ وَبَيَّنُوا۟ فَأُو۟لَٰٓئِكَ أَتُوبُ عَلَيْهِمْ ۚ وَأَنَا ٱلتَّوَّابُ ٱلرَّحِيمُ
+                </div>
+                <div class="english-text">
+                    Except for those who repent and correct themselves and make evident [what they concealed]. Those - I will accept their repentance, and I am the Accepting of repentance, the Merciful.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 161</span>
+                <div class="arabic-text">
+                    إِنَّ ٱلَّذِينَ كَفَرُوا۟ وَمَاتُوا۟ وَهُمْ كُفَّارٌ أُو۟لَٰٓئِكَ عَلَيْهِمْ لَعْنَةُ ٱللَّهِ وَٱلْمَلَٰٓئِكَةِ وَٱلنَّاسِ أَجْمَعِينَ
+                </div>
+                <div class="english-text">
+                    Indeed, those who disbelieve and die while they are disbelievers - upon them will be the curse of Allah and of the angels and the people, all together.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 162</span>
+                <div class="arabic-text">
+                    خَٰلِدِينَ فِيهَا ۖ لَا يُخَفَّفُ عَنْهُمُ ٱلْعَذَابُ وَلَا هُمْ يُنظَرُونَ
+                </div>
+                <div class="english-text">
+                    Abiding eternally therein. The punishment will not be lightened for them, nor will they be reprieved.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 163</span>
+                <div class="arabic-text">
+                    وَإِلَٰهُكُمْ إِلَٰهٌۭ وَٰحِدٌۭ ۖ لَّآ إِلَٰهَ إِلَّا هُوَ ٱلرَّحْمَٰنُ ٱلرَّحِيمُ
+                </div>
+                <div class="english-text">
+                    And your god is one God. There is no deity [worthy of worship] except Him, the Entirely Merciful, the Especially Merciful.
+                </div>
+            </div>
+        </div>
+
+        <div class="reflection-section">
+            <h2>💭 تأملات يومية | Daily Reflections</h2>
+            
+            <div class="reflection-point">
+                <h3>💚 الشهداء أحياء | The Martyrs Are Alive</h3>
+                <div class="reflection-arabic">
+                    ولا تقولوا لمن يُقتل في سبيل الله أموات! لا تقل "ماتوا" - بل أحياء! الشهداء أحياء عند ربهم يُرزقون - كما جاء في آية أخرى. ولكن لا تشعرون - لا تحسون بهذه الحياة بحواسكم المادية. هذه حياة برزخية خاصة، أعلى من حياة الدنيا. الشهيد في نعيم عند الله، روحه في الجنة تتنعم. الموت في سبيل الله ليس نهاية، بل بداية حياة أسمى. هذا تكريم عظيم للشهداء وتثبيت للمجاهدين. الشهادة في سبيل الله أعلى مقامات الشرف.
+                </div>
+                <div class="reflection-english">
+                    "Do not say about those killed in Allah's way 'they are dead!'" Don't say "they died" - rather, they are alive! Martyrs are alive with their Lord, being provided for - as stated in another verse. "But you perceive not" - you don't sense this life with your physical senses. This is a special Barzakh life, higher than worldly life. The martyr is in bliss with Allah, his soul enjoying paradise. Death in Allah's way is not an end, but the beginning of a higher life. This is great honor for martyrs and encouragement for those who strive. Martyrdom in Allah's way is the highest rank of honor.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🧪 الابتلاء سنة الحياة | Trials Are The Law of Life</h3>
+                <div class="reflection-arabic">
+                    ولنبلونكم بشيء من الخوف والجوع ونقص من الأموال والأنفس والثمرات! الابتلاء حتمي - "لنبلونكم" - سنختبركم لا محالة. الابتلاء متنوع: الخوف - القلق والخطر، والجوع - الفقر والحاجة، ونقص من الأموال - الخسائر المالية، والأنفس - موت الأحبة، والثمرات - فشل المحاصيل والمشاريع. وبشر الصابرين! بشارة عظيمة لمن يصبر على البلاء. الابتلاء ليس عقوبة، بل اختبار. والنجاح فيه هو الصبر والرضا.
+                </div>
+                <div class="reflection-english">
+                    "We will surely test you with fear, hunger, loss of wealth, lives, and fruits!" Trials are inevitable - "We will test you" - we will certainly test you. Trials are diverse: fear - anxiety and danger, hunger - poverty and need, loss of wealth - financial losses, lives - death of loved ones, and fruits - crop and project failures. "Give good tidings to the patient!" Great glad tidings for those who are patient through trials. Trials are not punishment, but tests. Success in them is through patience and contentment.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🤲 إنا لله وإنا إليه راجعون | To Allah We Belong and To Him We Return</h3>
+                <div class="reflection-arabic">
+                    الذين إذا أصابتهم مصيبة قالوا: إنا لله وإنا إليه راجعون! أعظم كلمات تُقال عند المصيبة. إنا لله - نحن ملك لله، وهو يتصرف في ملكه كيف يشاء. وإنا إليه راجعون - سنعود إليه فيجازينا على صبرنا. هذا استرجاع واحتساب. أولئك عليهم صلوات من ربهم ورحمة - صلوات الله ورحمته! وأولئك هم المهتدون - على الهداية الحقيقية. أربع جوائز عظيمة لمن قال هذه الكلمات بصدق عند المصيبة!
+                </div>
+                <div class="reflection-english">
+                    "Who when disaster strikes say: 'To Allah we belong and to Him we return!'" The greatest words to say during calamity. "To Allah we belong" - we are Allah's property, He disposes of His property as He wills. "To Him we return" - we'll return to Him and He'll reward us for our patience. This is acknowledgment and seeking reward. "Upon them are blessings from their Lord and mercy" - Allah's blessings and mercy! "They are the guided ones" - upon true guidance. Four great rewards for whoever says these words sincerely during calamity!
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🕋 الصفا والمروة من شعائر الله | Safa and Marwah Are Symbols of Allah</h3>
+                <div class="reflection-arabic">
+                    إن الصفا والمروة من شعائر الله! الشعائر هي الأعلام الظاهرة للدين. السعي بين الصفا والمروة من مناسك الحج والعمرة. فمن حج البيت أو اعتمر فلا جناح عليه أن يطوف بهما - لا إثم ولا حرج في السعي. ومن تطوع خيراً - ومن فعل خيراً زائداً بنية صالحة. فإن الله شاكر - يشكر القليل ويضاعفه، عليم - يعلم النيات والأعمال. هذا تشجيع على فعل الخير التطوعي. الله يقدر كل خير تفعله ويضاعف أجره.
+                </div>
+                <div class="reflection-english">
+                    "Safa and Marwah are among Allah's symbols!" Symbols are visible signs of the religion. Walking between Safa and Marwah is part of Hajj and Umrah rituals. "Whoever makes Hajj or Umrah, there is no blame for walking between them" - no sin or harm in this walking. "Whoever volunteers good" - whoever does extra good with sincere intention. "Allah is appreciative" - He appreciates the little and multiplies it, "Knowing" - He knows intentions and deeds. This is encouragement for voluntary good deeds. Allah values every good you do and multiplies its reward.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>📚 كتمان العلم جريمة | Concealing Knowledge Is A Crime</h3>
+                <div class="reflection-arabic">
+                    إن الذين يكتمون ما أنزلنا من البينات والهدى من بعد ما بيناه للناس في الكتاب! يكتمون الحق والعلم والهدى بعد أن بيّنه الله في الكتب. أولئك يلعنهم الله ويلعنهم اللاعنون! لعنة الله ولعنة الخلائق على كاتمي العلم. إلا الذين تابوا وأصلحوا وبينوا - من تاب وأصلح عمله وبيّن ما كتم. فأولئك أتوب عليهم وأنا التواب الرحيم! باب التوبة مفتوح. العلم أمانة يجب تبليغها، وكتمانها خيانة عظيمة.
+                </div>
+                <div class="reflection-english">
+                    "Those who conceal what We sent of clear proofs and guidance after We made it clear in the Scripture!" They conceal truth, knowledge, and guidance after Allah clarified it in books. "Those are cursed by Allah and cursed by those who curse!" Allah's curse and creatures' curse upon concealers of knowledge. "Except those who repent, correct, and make evident" - whoever repents, reforms their actions, and reveals what they concealed. "I accept their repentance, I am the Accepting, the Merciful!" The door of repentance is open. Knowledge is a trust that must be conveyed, concealing it is great betrayal.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>⚠️ الموت على الكفر | Dying In Disbelief</h3>
+                <div class="reflection-arabic">
+                    إن الذين كفروا وماتوا وهم كفار أولئك عليهم لعنة الله والملائكة والناس أجمعين! الموت على الكفر - أسوأ خاتمة. عليهم لعنة الله والملائكة والناس أجمعين - لعنة شاملة من الله والملائكة وجميع الناس. خالدين فيها - في النار للأبد. لا يخفف عنهم العذاب - لا تخفيف ولا راحة. ولا هم ينظرون - لا مهلة ولا فرصة ثانية. هذا تحذير شديد من الموت على الكفر. العبرة بالخاتمة، فاحرص على حسن الخاتمة بالثبات على الإيمان.
+                </div>
+                <div class="reflection-english">
+                    "Those who disbelieve and die as disbelievers, upon them is Allah's curse, the angels', and all people's!" Dying in disbelief - the worst ending. "Upon them is the curse of Allah, the angels, and all people" - comprehensive curse from Allah, angels, and all people. "Abiding eternally therein" - in Hell forever. "The punishment won't be lightened" - no relief or rest. "Nor will they be reprieved" - no respite or second chance. This is severe warning against dying in disbelief. What matters is the ending, so be keen on a good ending by being steadfast in faith.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>☝️ التوحيد الخالص | Pure Monotheism</h3>
+                <div class="reflection-arabic">
+                    وإلهكم إله واحد! آية التوحيد الصريح - إلهكم واحد لا شريك له. لا إله إلا هو - لا معبود بحق إلا الله. الرحمن الرحيم - الواسع الرحمة في الدنيا والآخرة. ختمت الآية بصفتي الرحمة - الرحمن الرحيم - لتبين أن التوحيد رحمة للعباد. عبادة إله واحد راحة للقلب، أما الشرك فشتات وقلق. لا إله إلا الله - كلمة التوحيد التي من أجلها خُلقنا ومن أجلها نُحاسب. وحّد الله في عبادتك، واجعل كل أعمالك خالصة له.
+                </div>
+                <div class="reflection-english">
+                    "Your god is one God!" The verse of explicit monotheism - your God is One with no partner. "There is no deity except Him" - no god worthy of worship except Allah. "The Entirely Merciful, the Especially Merciful" - vast in mercy in this world and the hereafter. The verse ends with two attributes of mercy - ar-Rahman ar-Raheem - to show that monotheism is mercy for servants. Worshipping one God is comfort for the heart, while polytheism is confusion and anxiety. There is no god but Allah - the word of monotheism for which we were created and for which we'll be judged. Make Allah one in your worship, and make all your deeds sincerely for Him.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-text">
+                "إِنَّا لِلَّهِ وَإِنَّآ إِلَيْهِ رَٰجِعُونَ"
+            </div>
+            <div class="footer-text">
+                "Indeed we belong to Allah, and indeed to Him we will return."
+            </div>
+            <div class="footer-text">
+                May this daily reflection bring us closer to Allah and increase our understanding of His words
+            </div>
+            <div class="footer-text">
+                🤲 آمين يا رب العالمين | Ameen Ya Rabb Al-Alameen 🤲
+            </div>
+        </div>
+
+        <div class="signature">
+            <div class="signature-text">✨ Created with dedication to spreading the beauty of the Quran ✨</div>
+            <div class="signature-text">May Allah accept this humble effort</div>
+            <div class="signature-link">📖 Daily Quran Reflections Project</div>
+        </div>
+    </div>
+</body>
+</html>
